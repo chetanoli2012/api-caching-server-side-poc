@@ -5,7 +5,20 @@ import { BACKEND_BASE_URL } from "../constants/constants";
 
 import styles from "../styles/[page].module.css";
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+  const totalNumberOfPages = 10;
+  const paths = Array.from(
+    { length: totalNumberOfPages },
+    (_, index) => `/${index + 1}`
+  );
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
   const page = parseInt(params?.page, 10) || 1;
   const response = await fetch(`${BACKEND_BASE_URL}/${page}`);
   const data = await response.json();
