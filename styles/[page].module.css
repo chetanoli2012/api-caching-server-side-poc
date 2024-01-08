@@ -1,0 +1,41 @@
+/* [page].module.css */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.beerHeader {
+  padding: 18px 0;
+}
+
+.beerItem {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.pagination {
+  margin-top: 28px;
+}
+
+.previousPage,
+.nextPage {
+  display: inline-block;
+  padding: 10px;
+  background-color: #0070f3;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.previousPage.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.list {
+  list-style: none;
+}
